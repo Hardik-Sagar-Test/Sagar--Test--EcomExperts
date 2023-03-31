@@ -42,12 +42,18 @@
       {% endif %}
       {{ block.shopify_attributes }}
     >
+      
+<script>
+  function myFunction() {
+    consolde.log("aaaaaaaaaaaaaaaaaaaaaaa");
+  }
+</script>
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
-          <div class="select">
+          <div class="select" onload="myFunction()">
             <select
               id="Option-{{ section.id }}-{{ forloop.index0 }}"
               class="select__select"
@@ -120,9 +126,3 @@
     </div>
   </div>
 </noscript>
-
-<script>
-  function myFunction() {
-    consolde.log("aaaaaaaaaaaaaaaaaaaaaaa");
-  }
-</script>
