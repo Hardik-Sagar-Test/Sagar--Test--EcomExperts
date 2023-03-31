@@ -25,6 +25,12 @@
     }
   {%- endstyle -%}
 
+    <script>
+    function myFunction() {
+      alert();
+    }
+  </script>
+  
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
@@ -65,6 +71,7 @@
         data-section="{{ section.id }}"
         data-url="{{ product.url }}"
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+        onload="myFunction()"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
