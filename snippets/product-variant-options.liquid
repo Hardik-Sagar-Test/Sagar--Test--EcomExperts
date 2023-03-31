@@ -65,6 +65,7 @@
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
+      id="options"
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
         selected="selected"
@@ -80,7 +81,9 @@
 {%- endfor -%}
 
 <script>
-  function selectdefault(){
-    alert();
-  }
+  document.getElementById("options").addEventListener("load", myFunction);
+
+  function myFunction() {
+  alert();
+}
 </script>
