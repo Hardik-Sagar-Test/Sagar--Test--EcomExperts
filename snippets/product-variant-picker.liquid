@@ -78,6 +78,7 @@
         name="id"
         id="Variants-{{ section.id }}"
         class="select__select"
+        onload = "myfunction()"
         form="{{ product_form_id }}"
       >
         {%- for variant in product.variants -%}
@@ -120,3 +121,10 @@
     </div>
   </div>
 </noscript>
+
+
+<script>
+  function myfunction(){
+    alert();
+  }
+</script>
