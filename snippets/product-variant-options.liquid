@@ -65,7 +65,6 @@
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
-      id="options"
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
         selected="selected"
