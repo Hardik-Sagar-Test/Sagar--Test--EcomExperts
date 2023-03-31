@@ -75,7 +75,9 @@
     </label>
     <div class="select">
       <select
-        onload = "myfunction()"
+        name="id"
+        id="Variants-{{ section.id }}"
+        class="select__select"
         form="{{ product_form_id }}"
       >
         {%- for variant in product.variants -%}
