@@ -10,38 +10,34 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 {{ product.options }}
-  {% for option in product.options %}
-    {% if option == "Color" %}
-      1
-    {% else %}
-      2
-    {% endif %}
-  {% endfor %}
+  
 
 {%- unless product.has_only_default_variant -%}
-  {%- if block.settings.picker_type == 'button' -%}
-    <variant-radios
-      id="variant-radios-{{ section.id }}"
-      class="no-js-hidden"
-      data-section="{{ section.id }}"
-      data-url="{{ product.url }}"
-      {% if update_url == false %}
-        data-update-url="false"
-      {% endif %}
-      {{ block.shopify_attributes }}
-    >
-      {%- for option in product.options_with_values -%}
-        <fieldset class="js product-form__input">
-          <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options', product: product, option: option, block: block %}
-        </fieldset>
-      {%- endfor -%}
-      <script type="application/json">
-        {{ product.variants | json }}
-      </script>
-    </variant-radios>
-  {%- else -%}
-    <variant-selects
+
+  {% for option in product.options %}
+    {% if option == "Color" %}
+          <variant-radios
+          id="variant-radios-{{ section.id }}"
+          class="no-js-hidden"
+          data-section="{{ section.id }}"
+          data-url="{{ product.url }}"
+          {% if update_url == false %}
+            data-update-url="false"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {%- for option in product.options_with_values -%}
+            <fieldset class="js product-form__input">
+              <legend class="form__label">{{ option.name }}</legend>
+              {% render 'product-variant-options', product: product, option: option, block: block %}
+            </fieldset>
+          {%- endfor -%}
+          <script type="application/json">
+            {{ product.variants | json }}
+          </script>
+        </variant-radios>
+    {% else %}
+      <variant-selects
       id="variant-selects-{{ section.id }}"
       class="no-js-hidden"
       data-section="{{ section.id }}"
@@ -79,7 +75,8 @@
         document.getElementById("Option-template--18440381792574__main-1")[0].setAttribute('selected','selected');
       </script>
     </variant-selects>
-  {%- endif -%}
+    {% endif %}
+  {% endfor %}
 {%- endunless -%}
 
 <noscript class="product-form__noscript-wrapper-{{ section.id }}">
