@@ -3134,6 +3134,12 @@ details-disclosure > details {
   margin: -0.5rem 0 -0.5rem 0;
 }
 
+ul.value.ul-globo-dropdown-option {
+    width: 142px;
+    border-color: #000 !important;
+}
+
+
 /* Ambient animation */
 
 @media (prefers-reduced-motion: no-preference) {
