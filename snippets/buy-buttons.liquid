@@ -23,7 +23,6 @@
         assign show_dynamic_checkout = true
       endif
     -%}
-    aaa
 
     <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
       <div class="product-form__error-message-wrapper" role="alert" hidden>
@@ -70,6 +69,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+        aaa
           <button
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
