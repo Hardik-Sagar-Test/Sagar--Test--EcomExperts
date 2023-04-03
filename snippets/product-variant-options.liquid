@@ -30,7 +30,7 @@
     for option1_name in variants_option1_arr
       case option.position
         when 1
-          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+          if variants_option1_arr[forloop.index0] == Unselected and variants_available_arr[forloop.index0]
             assign option_disabled = false
           endif
         when 2
