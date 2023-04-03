@@ -3136,7 +3136,7 @@ details-disclosure > details {
 
 ul.value.ul-globo-dropdown-option {
     width: 142px;
-    /* border: 1px solid #000; */
+    border-color: #000 !important;
 }
 
 
