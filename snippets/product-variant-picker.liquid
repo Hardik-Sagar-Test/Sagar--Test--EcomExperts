@@ -11,7 +11,7 @@
 {% endcomment %}
 {{ product.options[0] }}
 {%- unless product.has_only_default_variant -%}
-  {% if product.options == "Color" %}
+  {% if product.options[0] == "Color" %}
     <variant-radios
       id="variant-radios-{{ section.id }}"
       class="no-js-hidden"
