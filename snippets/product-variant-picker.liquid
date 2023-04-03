@@ -9,9 +9,9 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
-{{ product.options[0] }}
+{{ product.options }}
 {%- unless product.has_only_default_variant -%}
-  {% if product.options[0] == "Color" %}
+  {%- if block.settings.picker_type == 'button' -%}
     <variant-radios
       id="variant-radios-{{ section.id }}"
       class="no-js-hidden"
