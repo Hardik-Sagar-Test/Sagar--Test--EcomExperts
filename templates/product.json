@@ -22,13 +22,13 @@
         },
         "variant_picker": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "picker_type": "dropdown"
           }
         },
         "9bacc77b-e721-4938-9717-18e1085c27f7": {
           "type": "shopify:\/\/apps\/product-options-customizer\/blocks\/product-page-customizer\/6857ca6c-35eb-4b6f-9d58-a039f31d9406",
+          "disabled": true,
           "settings": {
             "pc_container_size": 100,
             "pc_show_options_total": "initial",
